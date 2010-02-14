@@ -15,11 +15,13 @@
    - Mac and Linux users must run the fudi_bridge.jar as root
      There are two ways to do this:
      
-     1) Open a terminal and cd to the folder where the fudi_bridge.jar is
-        located, then type:
-          sudo java -jar fudi.jar
+     1) Open a terminal and cd to the folder where the fudi_bridge.jar resides,
+        then type:
+          sudo java -jar fudi_bridge.jar &
      2) Open a terminal and type (' ' becomes '\ '):
-          sudo java -jar /path/to\ the\ folder/fudi.jar
+          sudo java -jar /path/to\ the\ folder/fudi_bridge.jar &
+     
+     You can close the terminal window now.
      
      For an OS other than Mac and Ubuntu your root command will probably not
      be sudo.
