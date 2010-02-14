@@ -1,0 +1,48 @@
+*
+*  FUDI as3 library
+*
+   This library is a port of the Puredata FUDI protocol to Actionscript. It
+   implements both the netsend and netreceive for use as native classes.
+
+*
+*  Folder Structure
+*
+   bin/                 - contains the compiled FUDI bridge
+   examples/            - contains example files
+            netreceive/ - contains example for the netreceive object
+            netsend/    - contains example for the netsend object
+   library/             - contains a compiled swc of the actionscript library
+   src/                 - contains the source files
+       actionscript/    - contains the source files of the actionscript library
+       processing/      - contains the source files of the FUDI bridge
+      
+*
+*  FUDI bridge
+*
+   The FUDI bridge serves as bridge between Flash and Puredata. It serves as
+   policy server to allow Flash to connect to TCP Sockets and as Bridge when
+   using the netreceive object in Flash since Flash can only connect to server
+   not create one.
+   
+   The policy server always opens at port 843. The FUDI server always opens a
+   port at 3001, this will be changed in a later release to allow custom ports.
+   
+*  Running the FUDI bridge
+
+   - Windows users simply double click the fudi_bridge.jar
+   - Mac and Linux users must run the fudi_bridge.jar as root
+     There are two ways to do this:
+     
+     1) Open a terminal and cd to the folder where the fudi_bridge.jar is
+        located, then type:
+          sudo java -jar fudi.jar
+     2) Open a terminal and type (' ' becomes '\ '):
+          sudo java -jar /path/to\ the\ folder/fudi.jar
+     
+     For an OS other than Mac and Ubuntu your root command will probably not
+     be sudo.
+
+*
+*  Examples
+*
+   Each example comes with its own readme file, please read it.

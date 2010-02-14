@@ -1,0 +1,68 @@
+#N canvas 577 238 447 466 10;
+#X obj 211 139 netsend;
+#X msg 211 11 connect localhost 3001;
+#X floatatom 211 170 5 0 0 0 - - -;
+#X msg 211 35 disconnect;
+#X obj -53 310 dac~;
+#X obj -34 200 hsl 50 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 300 1;
+#X obj -53 279 *~;
+#X obj -37 242 line~;
+#X msg -37 220 \$1 50;
+#X msg -59 10 \; pd dsp 1;
+#X obj 19 297 env~;
+#X obj -8 358 float;
+#X obj 45 41 metro 50;
+#X obj 45 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj -8 387 s \$0-env;
+#X obj 229 63 r \$0-env;
+#X obj 46 215 float;
+#X obj 46 240 s \$0-vol;
+#X obj 229 86 pack f f;
+#X obj 288 63 r \$0-vol;
+#X obj -37 147 loadbang;
+#X obj 52 377 vsl 15 50 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2467 1;
+#X obj -53 116 adc~;
+#X msg -37 174 0.1;
+#X obj 188 10 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577 0
+;
+#X obj 65 14 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577 0
+;
+#X text 89 7 start sending data;
+#X msg 229 111 send \$1 \$2;
+#X obj 72 95 s \$0-sendVol;
+#X obj 45 68 t b b;
+#X obj 46 187 r \$0-sendVol;
+#X obj -8 326 r \$0-sendEnv;
+#X obj 45 117 s \$0-sendEnv;
+#X floatatom 133 372 5 0 0 0 - - -;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 8 0;
+#X connect 5 0 16 1;
+#X connect 6 0 4 0;
+#X connect 6 0 4 1;
+#X connect 6 0 10 0;
+#X connect 7 0 6 1;
+#X connect 8 0 7 0;
+#X connect 10 0 11 1;
+#X connect 11 0 14 0;
+#X connect 11 0 21 0;
+#X connect 11 0 33 0;
+#X connect 12 0 29 0;
+#X connect 13 0 12 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 18 0 27 0;
+#X connect 19 0 18 1;
+#X connect 20 0 23 0;
+#X connect 22 0 6 0;
+#X connect 23 0 5 0;
+#X connect 27 0 0 0;
+#X connect 29 0 32 0;
+#X connect 29 1 28 0;
+#X connect 30 0 16 0;
+#X connect 31 0 11 0;

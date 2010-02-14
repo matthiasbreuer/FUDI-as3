@@ -1,0 +1,27 @@
+#N canvas 1334 212 450 300 10;
+#X obj -43 43 netreceive 3000;
+#X floatatom 44 69 5 0 0 0 - - -;
+#X obj -43 69 unpack f f;
+#X obj 14 97 s \$0-freq;
+#X obj -43 97 s \$0-vol;
+#X obj 210 34 vsl 15 65 0 1 0 0 empty \$0-vol empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 161 10 hsl 128 15 0 400 0 0 empty \$0-freq empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 158 57 osc~;
+#X obj 159 151 *~;
+#X obj 159 175 dac~;
+#X obj 210 133 line~;
+#X msg 210 109 \$1 50;
+#X text -47 2 This patch receives two floats from Flash.;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 5 0 11 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 9 1;
+#X connect 10 0 8 1;
+#X connect 11 0 10 0;
