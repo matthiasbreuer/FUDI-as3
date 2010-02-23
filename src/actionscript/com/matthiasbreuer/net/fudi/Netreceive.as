@@ -34,7 +34,7 @@ package com.matthiasbreuer.net.fudi {
 			$data = $data.replace(";", "");
 			$format = $format.replace(" ", "");
 			var converted : Array = new Array();
-			var splitted : Array = $data.split(" ");
+			var splitted : Array = $data.split(/[\x20\x09\x0A]+/g);
 			for(var j : int = 0;j < $format.length;j++) {
 				switch($format.charAt(j)) {
 					case "f":

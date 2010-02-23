@@ -33,13 +33,15 @@ package com.matthiasbreuer.net.fudi {
 			var msg : String = "";
 			for(var i : int = 0;i < $params.length;i++) {
 				var arg : String = String($params[i]);
-				arg.replace("	", " ");
-				arg.replace("\n", " ");
-				arg.replace(" ", "\ ");				arg.replace(";", "");
+				// Space, tab, newline
+				arg = arg.replace(/[\x20\x09\x0A]+/g, "\\ ");
+				// Semicolon
+				arg = arg.replace(/\x3B/g, "");
 				msg += arg;
-				if(i < $params.length - 1) msg += " "; 
+				if(i < $params.length - 1) msg += " ";
 			}
 			msg += ";";
+			trace(msg);
 			_socket.writeUTFBytes(msg);
 			_socket.flush();
 		}

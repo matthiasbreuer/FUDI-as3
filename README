@@ -25,7 +25,7 @@
    servers not create one.
    
    The policy server always opens a port at 843. The FUDI server always opens a
-   port at 3001, this will be changed in a later release to allow custom ports.
+   port at 3001. This will be changed in a later release to allow custom ports.
    
 *  Running the FUDI bridge
 
